@@ -22,3 +22,15 @@ Output: Confidence value for Rule
     a. Confidence = 0
 4. Return Confidence
 ```
+
+The function initializes the counters matched_antecedent_items and matched_rule_items to keep track of the number of itemsets that match the antecedent and the rule, respectively.
+
+It then iterates over each itemset in the dataset. If the itemset matches the antecedent, the matched_antecedent_items counter is incremented. If the itemset also matches the rule, the matched_rule_items counter is also incremented.
+
+The function then checks if the number of matched antecedent items is zero. If it is, the function returns zero to avoid division by zero.
+
+Finally, the function calculates the confidence value as the ratio of the number of matched rule items to the number of matched antecedent items. This confidence value is returned by the function.
+
+This alternative approach to calculating the confidence of a rule in a dataset has the same efficiency as the previous one, with a time complexity of O(n), where n is the number of itemsets in the dataset. However, the counting of matched itemsets is performed in a single pass through the dataset, which can be slightly more efficient in some cases.
+
+The confidence value calculated by this alternative code can be used in the same way as in the previous code. For example, it can be used to filter the rules that meet a certain minimum threshold, which can help in identifying the most likely relationships between items in the dataset.
